@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SnookerScore</string>
+    <string name="player_a">Ronnie O\'Sullivan</string>
+    <string name="player_b">Neil Robertson</string>
+    <string name="matchTotal">(19)</string>
+    <string name="zero">0</string>
+    <string name="blank">""</string>
+    <string name="reset">RESET</string>
+    <string name="concede">CONCEDE</string>
+    <string name="fauls">Fauls</string>
+</resources>

@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.snookerscore.MainActivity">
+
+
+    <!--Background-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/tabletop" />
+
+    <!--Players-->
+    <LinearLayout
+        android:id="@+id/players"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#99000000">
+
+        <TextView
+            android:id="@+id/player1"
+            style="@style/player"
+            android:text="@string/player_a"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/player2"
+            style="@style/player"
+            android:text="@string/player_b"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <!--Score Board-->
+    <LinearLayout
+        android:id="@+id/scoreBoard"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/players"
+        android:background="#000"
+        android:elevation="6dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/scoreFrameA"
+            style="@style/scoreYellow"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/scoreMatchA"
+            style="@style/scoreBlack"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/matchTotal"
+            style="@style/scoreBlack"
+            android:text="@string/matchTotal"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/scoreMatchB"
+            style="@style/scoreBlack"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/scoreFrameB"
+            style="@style/scoreYellow"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <!--Main-->
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+
+        <!--Main left-->
+        <LinearLayout
+            android:id="@+id/mainPlayerA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!--Red-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnRedA"
+                    style="@style/mainImg"
+                    android:onClick="addOnePlayerA"
+                    android:src="@drawable/btn_red" />
+
+                <TextView
+                    android:id="@+id/pointRedA"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Yellow-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnYellowA"
+                    style="@style/mainImg"
+                    android:onClick="addTwoPlayerA"
+                    android:src="@drawable/btn_yellow" />
+
+                <TextView
+                    android:id="@+id/pointYellowA"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Green-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnGreenA"
+                    style="@style/mainImg"
+                    android:onClick="addThreePlayerA"
+                    android:src="@drawable/btn_green" />
+
+                <TextView
+                    android:id="@+id/pointGreenA"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Brown-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnBrownA"
+                    style="@style/mainImg"
+                    android:onClick="addFourPlayerA"
+                    android:src="@drawable/btn_brown" />
+
+                <TextView
+                    android:id="@+id/pointBrownA"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Blue-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnBlueA"
+                    style="@style/mainImg"
+                    android:onClick="addFivePlayerA"
+                    android:src="@drawable/btn_blue" />
+
+                <TextView
+                    android:id="@+id/pointBlueA"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Pink-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnPinkA"
+                    style="@style/mainImg"
+                    android:onClick="addSixPlayerA"
+                    android:src="@drawable/btn_pink" />
+
+                <TextView
+                    android:id="@+id/pointPinkA"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Black-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnBlackA"
+                    style="@style/mainImg"
+                    android:onClick="addSevenPlayerA"
+                    android:src="@drawable/btn_black" />
+
+                <TextView
+                    android:id="@+id/pointBlackA"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!--Central Cue-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/cue" />
+
+        <!--Main Right-->
+        <LinearLayout
+            android:id="@+id/ballsPlayerB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+            <!--Red-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnRedB"
+                    style="@style/mainImg"
+                    android:onClick="addOnePlayerB"
+                    android:src="@drawable/btn_red" />
+
+                <TextView
+                    android:id="@+id/pointRedB"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Yellow-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnYellowB"
+                    style="@style/mainImg"
+                    android:onClick="addTwoPlayerB"
+                    android:src="@drawable/btn_yellow" />
+
+                <TextView
+                    android:id="@+id/pointYellowB"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Green-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnGreenB"
+                    style="@style/mainImg"
+                    android:onClick="addThreePlayerB"
+                    android:src="@drawable/btn_green" />
+
+                <TextView
+                    android:id="@+id/pointGreenB"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Brown-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnBrownB"
+                    style="@style/mainImg"
+                    android:onClick="addFourPlayerB"
+                    android:src="@drawable/btn_brown" />
+
+                <TextView
+                    android:id="@+id/pointBrownB"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Blue-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnBlueB"
+                    style="@style/mainImg"
+                    android:onClick="addFivePlayerB"
+                    android:src="@drawable/btn_blue" />
+
+                <TextView
+                    android:id="@+id/pointBlueB"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Pink-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnPinkB"
+                    style="@style/mainImg"
+                    android:onClick="addSixPlayerB"
+                    android:src="@drawable/btn_pink" />
+
+                <TextView
+                    android:id="@+id/pointPinkB"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+            <!--Black-->
+            <FrameLayout style="@style/mainContainer">
+
+                <ImageButton
+                    android:id="@+id/btnBlackB"
+                    style="@style/mainImg"
+                    android:onClick="addSevenPlayerB"
+                    android:src="@drawable/btn_black" />
+
+                <TextView
+                    android:id="@+id/pointBlackB"
+                    style="@style/mainTxt" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Fauls-->
+    <LinearLayout
+        android:id="@+id/fauls"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#99000000"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!--Fauls A-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <!--Grey-->
+            <FrameLayout style="@style/faulContainer">
+
+                <ImageButton
+                    android:id="@+id/faulGreyA"
+                    style="@style/faulImg"
+                    android:onClick="increaseFourPlayerB"
+                    android:src="@drawable/btn_grey" />
+
+                <TextView
+                    android:id="@+id/faulTextGreyA"
+                    style="@style/faulTxt" />
+            </FrameLayout>
+
+            <!--Blue-->
+            <FrameLayout style="@style/faulContainer">
+
+                <ImageButton
+                    android:id="@+id/faulBlueA"
+                    style="@style/faulImg"
+                    android:onClick="increaseFivePlayerB"
+                    android:src="@drawable/btn_blue" />
+
+                <TextView
+                    android:id="@+id/faulTextBlueA"
+                    style="@style/faulTxt" />
+            </FrameLayout>
+
+            <!--Pink-->
+            <FrameLayout style="@style/faulContainer">
+
+                <ImageButton
+                    android:id="@+id/faulPinkA"
+                    style="@style/faulImg"
+                    android:onClick="increaseSixPlayerB"
+                    android:src="@drawable/btn_pink" />
+
+                <TextView
+                    android:id="@+id/faulTextPinkA"
+                    style="@style/faulTxt" />
+            </FrameLayout>
+
+            <!--Black-->
+            <FrameLayout style="@style/faulContainer">
+
+                <ImageButton
+                    android:id="@+id/faulBlackA"
+                    style="@style/mainImg"
+                    android:onClick="increaseSevenPlayerB"
+                    android:src="@drawable/btn_black" />
+
+                <TextView
+                    android:id="@+id/faulTextBlackA"
+                    style="@style/faulTxt" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!--Fauls-->
+        <TextView
+            style="@style/player"
+            android:text="@string/fauls"
+            android:textSize="20sp" />
+
+        <!--Fauls B-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <!--Grey-->
+            <FrameLayout style="@style/faulContainer">
+
+                <ImageButton
+                    android:id="@+id/faulGreyB"
+                    style="@style/faulImg"
+                    android:onClick="increaseFourPlayerA"
+                    android:src="@drawable/btn_grey" />
+
+                <TextView
+                    android:id="@+id/faulTextGreyB"
+                    style="@style/faulTxt" />
+            </FrameLayout>
+
+            <!--Blue-->
+            <FrameLayout style="@style/faulContainer">
+
+                <ImageButton
+                    android:id="@+id/faulBlueB"
+                    style="@style/faulImg"
+                    android:onClick="increaseFivePlayerA"
+                    android:src="@drawable/btn_blue" />
+
+                <TextView
+                    android:id="@+id/faulTextBlueB"
+                    style="@style/faulTxt" />
+            </FrameLayout>
+
+            <!--Pink-->
+            <FrameLayout style="@style/faulContainer">
+
+                <ImageButton
+                    android:id="@+id/faulPinkB"
+                    style="@style/faulImg"
+                    android:onClick="increaseSixPlayerA"
+                    android:src="@drawable/btn_pink" />
+
+                <TextView
+                    android:id="@+id/faulTextPinkB"
+                    style="@style/faulTxt" />
+            </FrameLayout>
+
+            <!--Black-->
+            <FrameLayout style="@style/faulContainer">
+
+                <ImageButton
+                    android:id="@+id/faulBlackB"
+                    style="@style/mainImg"
+                    android:onClick="increaseSevenPlayerA"
+                    android:src="@drawable/btn_black" />
+
+                <TextView
+                    android:id="@+id/faulTextBlackB"
+                    style="@style/faulTxt" />
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Reset Board-->
+    <LinearLayout
+        android:id="@+id/resultsBoard"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@id/fauls"
+        android:background="#000"
+        android:elevation="6dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/reset"
+            style="@style/scoreYellow"
+            android:layout_weight="2"
+            android:onClick="resetScore"
+            android:text="@string/reset"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/scoreDifference"
+            style="@style/scoreBlack"
+            android:text="@string/zero"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/scoreRemaining"
+            style="@style/scoreBlack"
+            android:text="@string/zero"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/concede"
+            style="@style/scoreYellow"
+            android:layout_weight="2"
+            android:onClick="concedeFrame"
+            android:text="@string/concede"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</RelativeLayout>
