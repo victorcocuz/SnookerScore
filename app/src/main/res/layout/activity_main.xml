@@ -4,14 +4,8 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tabletop"
     tools:context="com.example.android.snookerscore.MainActivity">
-
-
-    <!--Background-->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/tabletop" />
 
     <!--Players-->
     <LinearLayout
@@ -20,17 +14,15 @@
         android:layout_height="60dp"
         android:background="#99000000">
 
-        <TextView
+        <EditText
             android:id="@+id/player1"
             style="@style/player"
-            android:text="@string/player_a"
-            android:textSize="24sp" />
+            android:text="@string/player_a" />
 
-        <TextView
+        <EditText
             android:id="@+id/player2"
             style="@style/player"
-            android:text="@string/player_b"
-            android:textSize="24sp" />
+            android:text="@string/player_b" />
     </LinearLayout>
 
     <!--Score Board-->
